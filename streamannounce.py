@@ -1,15 +1,49 @@
 import obspython as obs
 import requests
 import datetime
+import re
 
 WEBHOOK_URL = None
 ANNOUNCE_MESSAGE = None
 RECONNECT_ANNOUNCE_TIMEOUT = None
 
 last_start_time = None
+users = None
+roles = None
+
+def replace_discord_mentions(text):
+    global roles
+    global users
+
+    roles = []
+    users = []
+    pattern = r"@\[role:(\d+)\]|@\[user:(\d+)\]"
+    
+    def replacer(match):
+        global roles
+        global users
+        role_id, user_id = match.groups()
+        if role_id:
+            roles.append(role_id)
+            return f"<@&{role_id}>"
+        elif user_id:
+            users.append(user_id)
+            return f"<@{user_id}>"
+        return match.group(0)
+
+    return re.sub(pattern, replacer, text)
 
 def send_discord_message(content):
-    data = {"content": content}
+    data = {
+        "content": content, 
+        "allowed_mentions": 
+        {
+            "parse" : [],
+            "roles" : roles,
+            "users" : users
+        }
+    }
+    print(data)
     try:
         response = requests.post(WEBHOOK_URL, json=data)
         if response.status_code != 204:
@@ -33,7 +67,7 @@ def script_load(settings):
 def script_update(settings):
     global WEBHOOK_URL, ANNOUNCE_MESSAGE, RECONNECT_ANNOUNCE_TIMEOUT
     WEBHOOK_URL = obs.obs_data_get_string(settings, "webhook_url")
-    ANNOUNCE_MESSAGE = obs.obs_data_get_string(settings, "start_message")
+    ANNOUNCE_MESSAGE = replace_discord_mentions(obs.obs_data_get_string(settings, "start_message"))
     RECONNECT_ANNOUNCE_TIMEOUT = obs.obs_data_get_int(settings, "reconnect_timeout")
 
 # Define script properties (UI fields)
