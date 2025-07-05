@@ -19,7 +19,7 @@ Cons:
     ^ allows for websocket connection to discord
 
 3. Download script
-- Option 1: Download the script file directly (https://github.com/davis-matthew/StreamAnnounceScript/blob/main/streamannounce.py)
+- Option 1: Download the script file directly (https://github.com/exeloar/StreamAnnounceScript/blob/main/streamannounce.py)
 ![direct download](assets/directdownload.png)
 - Option 2: Download as ZIP and unzip
 

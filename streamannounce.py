@@ -43,7 +43,7 @@ def send_discord_message(content):
             "users" : users
         }
     }
-    print(data)
+
     try:
         response = requests.post(WEBHOOK_URL, json=data)
         if response.status_code != 204:
