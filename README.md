@@ -3,7 +3,7 @@
 A script that uses Discord Webhooks and OBS scripting capabilities to automatically post an announcement message when you go live
 
 Pros: (compared to existing bots)
-- 0 delay for stream announcements
+- No delay for stream announcements
 - Customizable delay so that you don't accidentally re-ping 100 times due to internet issues
 - Directly in your OBS so it only relies on your computer and discord (no other middleman services that can go down, do breaking updates, etc.)
 
@@ -19,10 +19,12 @@ Cons:
     ^ allows for websocket connection to discord
 
 3. Download script
-- Option 1: Copy the script text directly
+- Option 1: Download the script file directly (https://github.com/davis-matthew/StreamAnnounceScript/blob/main/streamannounce.py)
+![direct download](assets/directdownload.png)
 - Option 2: Download as ZIP and unzip
+![zip and download](assets/zip.png)
 - Option 3: git clone
-`git clone `
+`git clone https://github.com/davis-matthew/StreamAnnounceScript.git`
 4. Add script to OBS:
 
 - Go to OBS->Tools->Scripts:
