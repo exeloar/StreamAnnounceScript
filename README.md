@@ -25,7 +25,7 @@ Cons:
 
 ![zip and download](assets/zip.png)
 - Option 3: git clone
-`git clone https://github.com/davis-matthew/StreamAnnounceScript.git`
+`git clone https://github.com/exeloar/StreamAnnounceScript.git`
 4. Add script to OBS:
 
 - Go to OBS->Tools->Scripts:
