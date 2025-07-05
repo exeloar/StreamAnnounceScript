@@ -22,6 +22,7 @@ Cons:
 - Option 1: Download the script file directly (https://github.com/davis-matthew/StreamAnnounceScript/blob/main/streamannounce.py)
 ![direct download](assets/directdownload.png)
 - Option 2: Download as ZIP and unzip
+
 ![zip and download](assets/zip.png)
 - Option 3: git clone
 `git clone https://github.com/davis-matthew/StreamAnnounceScript.git`
@@ -54,4 +55,5 @@ Cons:
     - Copy role ID
     ![roleID](assets/roleid.png)
     - Copy user ID (right click user)
+
     ![userID](assets/userid.png)
