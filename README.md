@@ -46,7 +46,8 @@ Cons:
 6. Edit script parameters
 - Set up your webhook parameters, message, and delay between notifications
 ![Script Parameters](assets/scriptparams.png)
-- Your message can @ roles and users using the syntax (@[role:$roleid]) for a role, (@[user:$userid]) for a user. 
+- @everyone and @here are special, so you can just type those as-is.
+- For any other roles or users, use the syntax (@[role:$roleid]) for a role, (@[user:$userid]) for a user. 
 
     Getting IDs:
     - Enable Developer Mode (user settings -> advanced)
